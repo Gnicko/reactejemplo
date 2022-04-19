@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "./Estudiante.css";
+import "./Estudiante.css"; 
 export default class Estudiante extends Component {
     
     render() {
