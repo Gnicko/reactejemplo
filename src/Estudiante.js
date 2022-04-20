@@ -25,7 +25,7 @@ export default class Estudiante extends Component {
   }
 
   listarEstudiantes() {
-    fetch("http://localhost:1234/estudiantes")
+    fetch("/estudiantes.json")
       .then((resp) => resp.json())
       .then((json) => {
         this.setState({
