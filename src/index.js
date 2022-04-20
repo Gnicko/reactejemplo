@@ -8,7 +8,7 @@ import Estudiante from './Estudiante';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Estudiante />
+    <Estudiante nombre="Nicolas" apellido="Gomez-Tolosa" edad="24"/>
   </React.StrictMode>
 );
 

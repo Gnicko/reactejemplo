@@ -1,18 +1,52 @@
 import React, { Component } from 'react'
 import "./Estudiante.css"; 
+
 export default class Estudiante extends Component {
+    constructor(props){
+      super(props) ;
+      this.cargarCurso=this.cargarCurso.bind(this)
     
+      this.state={
+        curso: [{nombre:"React",horas:"12"}],
+        lista:[{nombre:"objetos1",horas:"10"},
+        {nombre:"seminario",horas:"7"},{nombre:"ingenieria1",horas:"10"},{nombre:"ingenieria2",horas:"14"},
+        {nombre:"base de datos",horas:"4"}]
+      }
+    }
+    cargarCurso(){
+      this.setState((state)=>({
+          curso:[...state.curso,state.lista[Math.floor(Math.random()*5)]]
+         
+      }))
+   
+    }
+
+
+
     render() {
-        let obj={
-            nombre:"Nicolas",
-            apellido:"Gomez-Tolosa",
-            edad:24
-        };
+   
     return (
       <div className='estilo' >
-          <p > Nombre: {obj.nombre}</p>
-          <p>Apellido:{obj.apellido}</p>
-          <p>Edad: {obj.edad}</p>
+          <p> Nombre: {this.props.nombre}</p>
+          <p>Apellido:{this.props.apellido}</p>
+          <p>Edad: {this.props.edad}</p>
+          <button onClick={this.cargarCurso}>inscribirme</button>
+          <table border="1">
+            <thead>
+              <th>Curso</th>
+              <th>Cantidad de Hs</th>
+            </thead>
+            <tbody>
+              {this.state.curso.map((c,index)=>(
+                <tr>
+
+                 <td>{c.nombre}</td>
+              <td>{c.horas} horas semanales</td>
+                </tr>
+              ))}
+             
+            </tbody>
+          </table>
       </div>
     )
   }
