@@ -5,9 +5,10 @@ export default class Estudiante extends Component {
     constructor(props){
       super(props) ;
       this.cargarCurso=this.cargarCurso.bind(this)
-    
+      this.listarEstudiantes=this.listarEstudiantes.bind(this)
       this.state={
         curso: [{nombre:"React",horas:"12"}],
+        estudiantes:[],
         lista:[{nombre:"objetos1",horas:"10"},
         {nombre:"seminario",horas:"7"},{nombre:"ingenieria1",horas:"10"},{nombre:"ingenieria2",horas:"14"},
         {nombre:"base de datos",horas:"4"}]
@@ -21,7 +22,17 @@ export default class Estudiante extends Component {
    
     }
 
-
+    listarEstudiantes(){
+      fetch("http://localhost:1234/estudiantes")
+      .then((resp)=>resp.json())
+      .then((json)=>{
+         this.setState(({
+            
+            estudiantes:json.estudiantes
+            
+        }))
+      }) 
+    }
 
     render() {
    
@@ -45,6 +56,27 @@ export default class Estudiante extends Component {
                 </tr>
               ))}
              
+            </tbody>
+          </table>
+          <button onClick={this.listarEstudiantes}>listar estudiatnes</button>
+          <h3>Estudiantes</h3>
+          <table border="1">
+            <thead>
+              <tr>
+              <th>Nombre</th>
+              <th>Apellido</th> 
+              <th>Curso</th> 
+              </tr>
+            </thead>
+            <tbody>
+              
+              {this.state.estudiantes.map((e,index)=>(
+                <tr>
+                 <td>{e.nombre}</td>
+                 <td>{e.apellido} </td>
+                 <td>{e.cursos[0].curso} </td>
+                </tr>
+              ))}       
             </tbody>
           </table>
       </div>
