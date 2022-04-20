@@ -1,0 +1,42 @@
+{ "estudiantes": [
+    {
+        "nombre": "Nicolas",
+        "cursos": [
+            {
+                "curso": "React",
+                "id": 526
+            },
+            {
+                "curso": "Seminario del lenguaje",
+                "id": 883
+            }
+        ],
+        "apellido": "Gomez-Tolosa"
+    },
+    {
+        "nombre": "Juan",
+        "cursos": [
+            {
+                "curso": "Orientacion a objetos",
+                "id": 107
+            }
+        ],
+        "apellido": "Hernandez"
+    },
+    {
+        "nombre": "Ricky",
+        "cursos": [
+            {
+                "curso": "Angular",
+                "id": 781
+            },
+            {
+                "curso": "React",
+                "id": 32
+            }
+        ],
+        "apellido": "Ford"
+    }
+],
+"result": "success"
+}

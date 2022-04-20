@@ -1,0 +1,20 @@
+{"cursos": [
+    {
+        "curso": "Objetos 1",
+        "id": 494
+    },
+    {
+        "curso": "Seminario del lenguaje",
+        "id": 625
+    },
+    {
+        "curso": "React",
+        "id": 833
+    },
+    {
+        "curso": "Angular",
+        "id": 28
+    }
+],
+"result": "success"
+}
